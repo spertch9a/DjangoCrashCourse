@@ -23,9 +23,22 @@ def todo_detail(request, id):
 def todo_create(request):
     form = TodoForm(request.POST or None)
     if form.is_valid():
-        # create a todo objet
-        print(form.cleaned_data)
-        pass
+        form.save()
+    
     context = {"form": form}
     return render(request, "todo/todo_create.html", context)
         
+     
+#ALL OF THIS 
+ # create a todo objet
+        #print(form.cleaned_data)
+      #  name = form.cleaned_data['name']
+      #  due_date= form.cleaned_data['due_date']
+      #  print(name, due_date)
+
+      #  new_todo = Todo.objects.create(name = name, due_date = due_date)
+       # pass
+#CAN BE DONE USING THIS from.save()
+
+        
+   
